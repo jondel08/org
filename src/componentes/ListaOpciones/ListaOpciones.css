@@ -1,0 +1,28 @@
+.campo-lista {
+          margin: 24px 0;
+}
+
+.campo-lista label {
+          display: block;
+          font-size: 18px;
+          font-weight: 600;
+          font-family: "Montserrat", sans-serif;
+          margin-bottom: 8px;
+}
+
+.campo-lista select {
+          width: 100%;
+          background-color: #ffffff;
+          box-shadow: 10px 10x 30px rgba(0, 0, 0, 0.06);
+          padding: 30px 20px;
+          border: none;
+          font-size: 16px;
+
+          font-family: "Montserrat", sans-serif;
+          display: block;
+          outline-color: #6278f7;
+}
+
+.campo-lista .disabled{
+          color: gray;
+}

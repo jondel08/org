@@ -1,7 +1,9 @@
-const Boton = () =>{
+import "./Boton.css";
+
+const Boton = (props) =>{
           return (
-            <div>
-              <button>Agregar colaborador</button>
+            <div className="btn">
+              <button>{props.texto}</button>
             </div>
           );
 }
