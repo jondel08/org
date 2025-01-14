@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto/CampoTexto";
+import Campo from "../Campo/Campo";
 import Boton from "../Boton/Boton";
 import ListaOpciones from "../ListaOpciones/ListaOpciones";
 
@@ -9,8 +9,10 @@ const Formulario = (props) => {
   const [puesto, setPuesto] = useState("");
   const [foto, setFoto] = useState("");
   const [equipo, setEquipo] = useState("");
+  const [nombreEquipo, setNombreEquipo] = useState("");
+  const [color, setColor] = useState("");
 
-  const { registrarColaborador } = props;
+  const { registrarColaborador, crearEquipo } = props;
 
   const manejarEnvio = (e) => {
     e.preventDefault();
@@ -23,26 +25,31 @@ const Formulario = (props) => {
     registrarColaborador(datosEnviar);
   };
 
+  const manejarNuevoEquipo = (e) => {
+    e.preventDefault();
+    crearEquipo({ equipo: nombreEquipo, destaque: color, fondo: color });
+  };
+
   return (
     <section className="formulario">
       <form onSubmit={manejarEnvio}>
         <h2>Rellena el formulario para crear el colaborador</h2>
 
-        <CampoTexto
+        <Campo
           titulo="Nombre"
           required
           valor={nombre}
           setValor={setNombre}
         />
 
-        <CampoTexto
+        <Campo
           titulo="Puesto"
           required
           valor={puesto}
           setValor={setPuesto}
         />
 
-        <CampoTexto titulo="Foto" required valor={foto} setValor={setFoto} />
+        <Campo titulo="Foto" required valor={foto} setValor={setFoto} />
 
         <ListaOpciones
           titulo="Equipo"
@@ -52,6 +59,27 @@ const Formulario = (props) => {
         />
 
         <Boton texto="Crear" />
+      </form>
+
+      <form onSubmit={manejarNuevoEquipo}>
+        <h2>Rellena el formulario para crear el Equipo</h2>
+
+        <Campo
+          titulo="Nombre de Equipo"
+          required
+          valor={nombreEquipo}
+          setValor={setNombreEquipo}
+        />
+
+        <Campo
+          titulo="Color"
+          required
+          valor={color}
+          setValor={setColor}
+          type="color"
+        />
+
+        <Boton texto="Registrar" />
       </form>
     </section>
   );

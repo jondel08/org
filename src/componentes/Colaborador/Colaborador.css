@@ -1,6 +1,7 @@
 .colaborador {
           width: 280px;
           margin-bottom: 24px;
+          position: relative;
 }
 
 .colaborador .encabezado {
@@ -26,7 +27,6 @@
 }
 
 .colaborador .info h4 {
-          /* color: #6278f7; */
           font-size: 18px;
           line-height: 22px;
           font-weight: bold;
@@ -40,4 +40,11 @@
           padding: 0 24px;
           font-weight: 400;
           margin: 0;
+}
+
+.eliminar{
+          position: absolute;
+          right: -15px;
+          top: -15px;
+          cursor: pointer; 
 }
